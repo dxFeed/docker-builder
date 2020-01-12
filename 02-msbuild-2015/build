@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source ../env
+docker build --build-arg from_image_namespace=${DOCKER_NAMESPACE} -t ${DOCKER_NAMESPACE}/msbuild:1809-4.5.2-2015 -m 2GB .

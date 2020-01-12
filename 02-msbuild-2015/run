@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source ../env
+docker run --rm -it                                          \
+    -e SRCDIR=C:\\dxfeed-net-api                             \
+    -e FLAGS="c:\\dxfeed-net-api\\dxfeed-c-api no-test"      \
+    -e RELEASE=0.0.1                                         \
+    -e C_API_REPO=https://github.com/mvkvl/dxfeed-c-api.git  \
+    --name msbuild-2015                                      \
+    ${DOCKER_NAMESPACE}/msbuild:1809-4.5.2-2015 $@

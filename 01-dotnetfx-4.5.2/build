@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source ../env
+docker build -t ${DOCKER_NAMESPACE}/dotnet:1809-4.5.2 -m 2GB .
