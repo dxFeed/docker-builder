@@ -1,0 +1,10 @@
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+cd /opt/vagrant/machines/windows-docker-machine     && \
+./start                                             && \
+docker context use 2019-box                         && \
+cd $DIR                                             && \
+cd 01-dotnetfx-4.5.2          && ./build && cd ..   && \
+cd 02-msbuild-2015            && ./build && cd ..   && \
+cd 03-builder-netfx4.5.2-2015 && ./build && cd ..   && \
+echo "Done!"
